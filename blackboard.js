@@ -9,7 +9,13 @@ async function blackboard(id, password) {
 
         const browser = await puppeteer.launch({
 		executablePath: '/usr/bin/chromium-browser',
-		args: ['--no-sandbox', "--disabled-setupid-sandbox"],
+		args: [
+			'--ignore-certificate-errors',
+        		'--no-sandbox',
+        		'--disable-setuid-sandbox',
+        		'--disable-accelerated-2d-canvas',
+        		'--disable-gpu'
+		],
 		headless: true
 	});
         
@@ -27,7 +33,10 @@ async function blackboard(id, password) {
 
 	await page.click("button.close");
         await page.waitFor(3000);
-        await page.click("div.lang.card-body > h3 > strong > a");
+        
+	await page.screenshot({ path: 'screenshot2.png' })
+
+	await page.click("div.lang.card-body > h3 > strong > a");
         // await page.click("div.lang.ko.card-body > h3 > strong > a");
         await page.waitForSelector("input#one_id.form-control");
         await page.type("input#one_id.form-control", id);
