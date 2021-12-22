@@ -36,7 +36,9 @@ async function blackboard(id, password) {
         
 	await page.screenshot({ path: 'screenshot2.png' })
 
-	await page.click("div.lang.card-body > h3 > strong > a");
+	await page.click("div.lang.en.card-body > h3 > strong > a");
+	await page.waitFor(3000);
+	await page.screenshot({ path: 'screenshot3.png' })
         // await page.click("div.lang.ko.card-body > h3 > strong > a");
         await page.waitForSelector("input#one_id.form-control");
         await page.type("input#one_id.form-control", id);
