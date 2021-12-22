@@ -1,0 +1,25 @@
+{
+  "name": "blackboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blackboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minyongggg/blackboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minyongggg/blackboard/issues"
+  },
+  "homepage": "https://github.com/Minyongggg/blackboard#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "chromium": "^3.0.3",
+    "puppeteer": "^13.0.1",
+    "puppeteer-core": "^1.11.0"
+  }
+}
