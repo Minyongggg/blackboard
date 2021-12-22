@@ -55,5 +55,4 @@ async function blackboard(id, password) {
     return arr;
 }
 
-const result = await blackboard('naminyong97', 'dlalsdyd1!');
-console.log(result);
+const result = blackboard('naminyong97', 'dlalsdyd1!');
