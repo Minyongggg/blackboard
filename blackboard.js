@@ -22,8 +22,13 @@ async function blackboard(id, password) {
 	console.log(browser);
 	console.log("step2");
 
+	//await browser.userAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36');
+
 	const page = await browser.newPage();
+	await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36');
 	console.log(page);
+
+	console.log(await page.evaluate('navigator.userAgent'));
 	console.log("step3");
 
         await page.setViewport({width: 1200, height: 2000});
@@ -36,7 +41,7 @@ async function blackboard(id, password) {
         
 	await page.screenshot({ path: 'screenshot2.png' })
 
-	await page.click("div.lang.en.card-body > h3 > strong > a");
+	await page.click("a.text-white");
 	await page.waitFor(3000);
 	await page.screenshot({ path: 'screenshot3.png' })
         // await page.click("div.lang.ko.card-body > h3 > strong > a");
