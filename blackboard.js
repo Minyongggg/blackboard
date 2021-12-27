@@ -55,4 +55,4 @@ async function blackboard(id, password) {
     return arr;
 }
 
-const result = blackboard('naminyong97', 'dlalsdyd1!');
+const result = blackboard('id', 'password!');
